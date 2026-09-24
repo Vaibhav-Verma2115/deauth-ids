@@ -1,0 +1,17 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Heavy generated artefacts (regenerate with run_all.sh) — keep the repo light.
+models/*.pkl
+data/*.pcap
+
+# Figures, the dataset and model metadata ARE committed so the README renders
+# and the notebook results are reproducible without a training run.
+
+# Personal planning material — not part of the project.
+study_plan_7days.pdf

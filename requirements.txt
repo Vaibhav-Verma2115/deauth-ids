@@ -1,0 +1,38 @@
+# Requires Python 3.9 or newer.
+#
+# Core data-science stack (Day 2 "Install Tools" + Day 3-5 ML work)
+pandas>=1.3
+matplotlib>=3.4
+seaborn>=0.11
+
+# ---------------------------------------------------------------------------
+# Pinned so the shipped models/model.pkl loads.
+#
+# model.pkl is a pickle of a scikit-learn RandomForestClassifier, and a pickle
+# is only guaranteed to load under the library versions that wrote it:
+#
+#   * scikit-learn is pinned exactly. Loading an estimator pickled by a
+#     different version raises InconsistentVersionWarning and can fail
+#     outright, because the pickle stores the fitted attributes of that
+#     version's classes.
+#   * numpy must stay on 2.x. NumPy 2.0 renamed the internal `numpy.core`
+#     module to `numpy._core`, so a 2.x pickle hits ModuleNotFoundError on
+#     NumPy 1.x. Any 2.x release can read a 2.x pickle, so this is a range
+#     rather than an exact pin -- that keeps newer Pythons installable, since
+#     numpy 2.0.2 has no wheels for Python 3.13+.
+#
+# If these cannot be satisfied on your machine, nothing is lost: delete
+# models/ and retrain in about a minute with `python src/train_model.py`, or
+# press "Run 1 -> 2" on the dashboard's Model & Dataset tab.
+# ---------------------------------------------------------------------------
+scikit-learn==1.6.1
+numpy>=2.0,<3
+scipy>=1.11
+joblib>=1.3
+
+# Packet capture / real-time sniffing (Day 6)
+scapy>=2.4
+
+# Optional: gradient boosting model comparison (Day 5, "XGBoost (optional)")
+# Uncomment if you want to include XGBoost in the model comparison.
+# xgboost>=1.5

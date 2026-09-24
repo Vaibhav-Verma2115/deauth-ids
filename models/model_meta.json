@@ -1,0 +1,22 @@
+{
+  "features": [
+    "frame_length",
+    "rssi",
+    "packet_rate",
+    "duration",
+    "src_mac_freq",
+    "dst_mac_freq",
+    "deauth_count"
+  ],
+  "classes": {
+    "0": "Normal",
+    "1": "Attack"
+  },
+  "metrics": {
+    "accuracy": 0.9805,
+    "precision": 0.9800249687890137,
+    "recall": 0.9715346534653465,
+    "f1": 0.9757613424487259
+  },
+  "model": "RandomForestClassifier(n_estimators=200)"
+}
